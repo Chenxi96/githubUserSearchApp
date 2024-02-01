@@ -52,6 +52,10 @@ input {
     width: 184px;
 }
 
+input:focus {
+    outline: none;
+}
+
 ::placeholder {
     color: #4B6A9B;
     font-family: "Space Mono";

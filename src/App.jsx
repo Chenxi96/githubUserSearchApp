@@ -1,10 +1,21 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import moon from './assets/icon-moon.svg'
 import search from './assets/icon-search.svg'
+import Profile from './components/Profile'
 import './App.scss'
 
 function App() {
+  const[username, setUsername] = useState('octocat')
 
+  useEffect(() => {
+    fetch(`https://api.github.com/users/${username}`)
+    .then(response => response.json())
+    .then(data => setProfile(data))
+    
+  }, [username])
+
+  const[profile, setProfile] = useState({})
+  
   return (
     <>
       <header>
@@ -21,7 +32,9 @@ function App() {
           <button>Search</button>
         </form>
       </section>
-      <article></article>
+      <article>
+        <Profile profile={profile} />
+      </article>
     </>
   )
 }
