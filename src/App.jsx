@@ -8,13 +8,16 @@ function App() {
   const[username, setUsername] = useState('octocat')
 
   useEffect(() => {
-    fetch(`https://api.github.com/users/${username}`)
-    .then(response => response.json())
-    .then(data => setProfile(data))
-    
+    getUser()
   }, [username])
 
   const[profile, setProfile] = useState({})
+
+  function getUser() {
+    fetch(`https://api.github.com/users/${username}`)
+      .then(response => response.json())
+      .then(data => setProfile(data))
+  }
   
   return (
     <>
@@ -28,8 +31,8 @@ function App() {
       <section>
         <form action="">
           <img src={search} alt="" width={20.048} height={20} />
-          <input placeholder='Search GitHub username…' type="text" />
-          <button>Search</button>
+          <input onChange={(event) => setUsername(event.target.value) } placeholder='Search GitHub username…' type="text" />
+          <button onClick={getUser}>Search</button>
         </form>
       </section>
       <article>

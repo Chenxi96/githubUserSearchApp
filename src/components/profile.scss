@@ -1,8 +1,76 @@
+// light mode colors
+$lightDarkMBlue: #0079FF;
+$lightMGray: #697C9A;
+$lightMGrayBlue: #4B6A9B;
+$lightMDarkGray: #2B3442;
+$ligthMDarkWhite: #F6F8FF;
+$lightMWhite: #FEFEFE;
 
+// dark mode colors
+$darkMWhite: #FFFFFF;
+$darkMblack: #141D2F;
+$darkMDarkBlue: #1E2A47;
+
+.profile-container {
+    margin-inline: 1.5em;
+    background-color: $lightMWhite;
+    padding-block: 2em;
+    border-radius: 0.9375em;
+    box-shadow: 0em 1em 1.9em -0.6em rgba(70, 96, 187, 0.20);
+    color: $lightMGrayBlue;
+}
+
+// Title
 .header-container {
     display: flex;
+    gap: 1.2em;
+    width: 14.5em;
+    margin: 0 4.4em 0 1.5em;
 }
 
 .header-name {
-    font-size: 22px;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.header-username {
+    font-size: 0.8em;
+    color: $lightDarkMBlue;
+}
+
+.profile-image {
+    border-radius: 100%;
+    font-size: 0.8em;
+}
+// bio description
+.bio-container {
+    margin: 2.06em 1.5em 0 1.5em;
+}
+
+// following block
+
+.following-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1.13em 0.9em 1.19em 0.94em;
+    margin-inline: 1.5em;
+    margin-top: 1.44em;
+    border-radius: 0.625em;
+    background-color: $ligthMDarkWhite;
+}
+
+.following-wrapper > div {
+    text-align: center;
+}
+
+// links block
+.links-container {
+    margin-top: 1.5em;
+    margin-left: 1.5em;
+}
+
+.links-container > div {
+    display: flex;
+    gap: 0.8em;
+    margin-bottom: 1em;
 }

@@ -3,12 +3,17 @@ main {
     width: 100vw;
 }
 
+p {
+    margin: 0;
+    font-family: 'space mono';
+}
+
 // Header container
 header {
     display: flex;
     justify-content: space-between;
-    margin-inline: 24px;
-    margin-top: 31px;
+    margin-inline: 1.5em;
+    margin-top: 1.9em;
 }
 
 
@@ -16,40 +21,40 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 16px;
+    gap: 1em;
 }
 
 .light-mode > p {
     color: #4B6A9B;
     text-align: right;
     font-family: "Space Mono";
-    font-size: 13px;
+    font-size: 0.8em;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    letter-spacing: 2.5px;
+    letter-spacing: 0.15em;
     margin: 0;
 }
 
 // Search Input container
 section {
-    margin-inline: 24px;
+    margin-inline: 1.5em;
     background-color: #FEFEFE;
-    border-radius: 15px;
-    margin-block: 35px 16px;
-    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.20);
+    border-radius: 0.9em;
+    margin-block: 2.2em 1em;
+    box-shadow: 0em 1em 1.9em -0.6em rgba(70, 96, 187, 0.20);
 }
 
 form {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 6.5px 7px 7.5px 7px;
+    padding: 0.4em 0.4em 0.5em 0.4em;
 }
 
 input {
     border: none;
-    width: 184px;
+    width: 11.5em;
 }
 
 input:focus {
@@ -59,8 +64,8 @@ input:focus {
 ::placeholder {
     color: #4B6A9B;
     font-family: "Space Mono";
-    font-size: 13px;
+    font-size: 0.8em;
     font-style: normal;
     font-weight: 400;
-    line-height: 25px; /* 192.308% */
+    line-height: 1.6em; /* 192.308% */
 }

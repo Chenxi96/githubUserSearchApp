@@ -13,12 +13,11 @@ export default function Profile({profile}) {
                     <div className='header-wrapper'>
                         <p className='header-name'>{!profile.name ? profile.login : profile.name}</p>
                         <p className='header-username'>{`@${profile.login}`}</p>
-                        <p className='header-joined'>{profile.created_at}</p>
+                        <p className='header-joined'>{`Joined ${new Date(profile.created_at).toDateString()}`}</p>
                     </div>
                 </div>
                 <p className='bio-container'>{profile.bio === null ? 'This profile has no bio' : profile.bio}</p>
-                <div className='following-container'>
-                    <div className='following-wrapper'>
+                <div className='following-wrapper'>
                         <div>
                             <p>Repos</p>
                             <p>{profile.public_repos}</p>
@@ -32,7 +31,6 @@ export default function Profile({profile}) {
                             <p>{profile.following}</p>
                         </div>
                     </div>
-                </div>
                 <div className='links-container'>
                     <div>
                         <img src={location} alt="" />
