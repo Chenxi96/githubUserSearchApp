@@ -37,8 +37,10 @@ function App() {
       </header>
       <section className={`${mode}-input`}>
         <form action="">
-          <img src={search} alt="" width={20.048} height={20} />
-          <input onChange={(event) => setUsername(event.target.value) } placeholder='Search GitHub username…' type="text" />
+          <div className='search-container'>
+            <img src={search} alt="" width={20.048} height={20} />
+            <input onChange={(event) => setUsername(event.target.value) } placeholder='Search GitHub username…' type="text" />
+          </div>
           <button onClick={getUser}>Search</button>
         </form>
       </section>

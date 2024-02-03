@@ -62,14 +62,15 @@ section {
 
 form {
     display: flex;
-    justify-content: space-evenly;
+    justify-content:space-between;
     align-items: center;
     padding: 0.4em 0.4em 0.5em 0.4em;
 }
 
 input {
     border: none;
-    width: 11.5em;
+    width: 13.5em;
+    line-height: 1.725em;
 }
 
 input:focus {
@@ -79,11 +80,18 @@ input:focus {
 ::placeholder {
     color: #4B6A9B;
     font-family: "Space Mono";
-    font-size: 0.8em;
+    font-size: 0.97em;
     font-style: normal;
     font-weight: 400;
     line-height: 1.6em;
 }
+
+.search-container {
+    display: flex;
+    gap: 0.56em;
+    padding-left: 0.5em;
+}
+
 
 // dark mode
 .dark-mode-body {
@@ -111,4 +119,27 @@ input:focus {
 
 .lightMode > p {
     color: $lightMGrayBlue;
+}
+
+@media screen and (min-width: 768px) {
+    section {
+        margin-inline: 6.0625em;
+    }
+
+    header {
+        margin-inline: 6.0625em;
+    }
+
+    .search-container {
+        padding-left: 1.5em;
+        gap: 1.49em;
+    }
+    
+    ::placeholder {
+        font-size: 1.125em;
+    }
+
+    input {
+        width: 15.875em;
+    }
 }

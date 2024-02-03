@@ -39,6 +39,10 @@ $darkMDarkBlue: #1E2A47;
     color: $lightDarkMBlue;
 }
 
+.header-joined {
+    font-size: 13px;
+}
+
 .profile-image {
     border-radius: 100%;
     font-size: 0.8em;
@@ -46,6 +50,7 @@ $darkMDarkBlue: #1E2A47;
 // bio description
 .bio-container {
     margin: 2.06em 1.5em 0 1.5em;
+    font-size: 13px;
 }
 
 // following block
@@ -81,7 +86,12 @@ $darkMDarkBlue: #1E2A47;
 
 .links-container > div {
     display: flex;
-    gap: 0.8em;
+    flex-direction: column;
+}
+
+.links-wrapper {
+    display: flex;
+    gap: 0.8125em;
     margin-bottom: 1em;
 }
 
@@ -108,4 +118,59 @@ $darkMDarkBlue: #1E2A47;
 
 .lightMode-section {
     background-color: $lightMWhite;
+}
+
+@media screen and (min-width: 768px) {
+    .header-container {
+        width: 20.875em;
+    }
+
+    .profile-container {
+        margin-inline: 6.0625em;
+    }
+
+    .header-name {
+        font-size: 26px;
+    }
+
+    .header-username {
+        font-size: 1em;
+    }
+
+    .header-joined {
+        font-size: 15px;
+    }
+
+    .bio-container {
+        font-size: 15px;
+        margin-inline: 2.66em;
+    }
+
+    .links-container {
+        display: flex;
+        flex-direction: row;
+        height: 3.9em;
+        margin-inline: 2.5em;
+    }
+
+    .links {
+        margin-right: 4.0em;
+    }
+
+    .following-wrapper {
+        display: flex;
+        margin-inline: 2.5em;
+        justify-content: flex-start;
+        gap: 84px;
+        padding-inline: 2em;
+    }
+
+    .following-wrapper > div {
+        text-align: left;
+    }
+
+    .following-amount {
+        font-size: 22px;
+    }
+
 }

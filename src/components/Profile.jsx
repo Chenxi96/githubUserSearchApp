@@ -32,51 +32,56 @@ export default function Profile({profile, mode}) {
                         </div>
                     </div>
                 <div className='links-container'>
-                    {
-                        !profile.location ? 
-                        <div className='links-wrapper not-available'>
-                        <img src={location} alt="" />
-                        <p>Not Available</p>
+                    <div className='links'>
+                        {
+                            !profile.location ? 
+                            <div className='links-wrapper not-available'>
+                            <img src={location} alt="" />
+                            <p>Not Available</p>
+                            </div>
+                            :
+                            <div className='links-wrapper'>
+                            <img src={location} alt="" />
+                            <p>{profile.location}</p>
+                            </div>
+                        }
+                        {
+                            !profile.blog ?
+                            <div className='links-wrapper not-available'>
+                            <img src={website} alt="" />
+                            <p>Not Available</p>
+                            </div> 
+                            :
+                            <div className='links-wrapper'>
+                            <img src={website} alt="" />
+                            <p>{profile.blog}</p>
                         </div>
-                        :
-                        <div className='links-wrapper'>
-                        <img src={location} alt="" />
-                        <p>{profile.location}</p>
-                        </div>
-                    }
-                    {
-                        !profile.blog ?
-                        <div className='links-wrapper not-available'>
-                        <img src={website} alt="" />
-                        <p>Not Available</p>
-                        </div> 
-                        :
-                        <div className='links-wrapper'>
-                        <img src={website} alt="" />
-                        <p>{profile.blog}</p>
+                        }
                     </div>
-                    }
-                    {!profile.twitter_username ? 
-                    <div className='links-wrapper not-available'>
-                        <img src={twitter} alt="" />
-                        <p>Not Available</p>
-                    </div>:
-                    <div className='links-wrapper'>
-                        <img src={twitter} alt="" />
-                        <p>{profile.twitter_username === null ? 'Not Available': profile.twitter_username}</p>
-                    </div>
-                    }
+                    <div className='links'>
 
-                    {!profile.company ? 
-                    <div className='links-wrapper not-available'>
+                        {!profile.twitter_username ? 
+                        <div className='links-wrapper not-available'>
+                            <img src={twitter} alt="" />
+                            <p>Not Available</p>
+                        </div>:
+                        <div className='links-wrapper'>
+                            <img src={twitter} alt="" />
+                            <p>{profile.twitter_username === null ? 'Not Available': profile.twitter_username}</p>
+                        </div>
+                        }
+
+                        {!profile.company ? 
+                        <div className='links-wrapper not-available'>
+                            <img src={company} alt="" />
+                            <p>Not Available</p>
+                        </div> :
+                        <div className='links-wrapper'>
                         <img src={company} alt="" />
-                        <p>Not Available</p>
-                    </div> :
-                    <div className='links-wrapper'>
-                    <img src={company} alt="" />
-                    <p>{profile.company}</p>
+                        <p>{profile.company}</p>
+                        </div>
+                        }
                     </div>
-                    }
                 </div>
             </div>
         </>

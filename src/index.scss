@@ -20,7 +20,7 @@ body {
 h1 {
   color: #222731;
   font-family: "Space Mono";
-  font-size: 26px;
+  font-size: 1.635em;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -28,17 +28,18 @@ h1 {
 }
 
 button {
-  border-radius: 10px;
+  border-radius: 0.625em;
   background: #0079FF;
   cursor: pointer;
-  width: 84px;
-  height: 46px;
+  height: 3.286em;
+  width: 6em;
+  padding: 0;
   flex-shrink: 0;
   border: none; 
   color: #FFF;
   text-align: center;
   font-family: "Space Mono";
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -48,6 +49,13 @@ button:hover {
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 0.25rem auto -webkit-focus-ring-color;
 }
 
+
+@media screen and (min-width: 768px) {
+  button {
+    height: 3.5718em;
+    width: 7.5715em;
+  }
+}
