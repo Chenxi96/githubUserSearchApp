@@ -4,10 +4,10 @@ import twitter from '../assets/icon-twitter.svg'
 import company from '../assets/icon-company.svg'
 import './profile.scss'
 
-export default function Profile({profile}) {
+export default function Profile({profile, mode}) {
     return (
         <>
-            <div className='profile-container'>
+            <div className={`profile-container ${mode}-section`}>
                 <div className='header-container'>
                     <img className='profile-image' src={profile.avatar_url} alt="" width={70} height={70} />
                     <div className='header-wrapper'>
@@ -16,38 +16,67 @@ export default function Profile({profile}) {
                         <p className='header-joined'>{`Joined ${new Date(profile.created_at).toDateString()}`}</p>
                     </div>
                 </div>
-                <p className='bio-container'>{profile.bio === null ? 'This profile has no bio' : profile.bio}</p>
-                <div className='following-wrapper'>
+                <p className='bio-container'>{!profile.bio ? 'This profile has no bio' : profile.bio}</p>
+                <div className={`following-wrapper ${mode}-following`}>
                         <div>
-                            <p>Repos</p>
-                            <p>{profile.public_repos}</p>
+                            <p className='following-title'>Repos</p>
+                            <p className={`following-amount ${mode}`}>{profile.public_repos}</p>
                         </div>
                         <div>
-                            <p>Followers</p>
-                            <p>{profile.followers}</p>
+                            <p className='following-title'>Followers</p>
+                            <p className={`following-amount ${mode}`}>{profile.followers}</p>
                         </div>
                         <div>
-                            <p>Following</p>
-                            <p>{profile.following}</p>
+                            <p className='following-title'>Following</p>
+                            <p className={`following-amount ${mode}`}>{profile.following}</p>
                         </div>
                     </div>
                 <div className='links-container'>
-                    <div>
+                    {
+                        !profile.location ? 
+                        <div className='links-wrapper not-available'>
+                        <img src={location} alt="" />
+                        <p>Not Available</p>
+                        </div>
+                        :
+                        <div className='links-wrapper'>
                         <img src={location} alt="" />
                         <p>{profile.location}</p>
-                    </div>
-                    <div>
+                        </div>
+                    }
+                    {
+                        !profile.blog ?
+                        <div className='links-wrapper not-available'>
+                        <img src={website} alt="" />
+                        <p>Not Available</p>
+                        </div> 
+                        :
+                        <div className='links-wrapper'>
                         <img src={website} alt="" />
                         <p>{profile.blog}</p>
                     </div>
-                    <div>
+                    }
+                    {!profile.twitter_username ? 
+                    <div className='links-wrapper not-available'>
+                        <img src={twitter} alt="" />
+                        <p>Not Available</p>
+                    </div>:
+                    <div className='links-wrapper'>
                         <img src={twitter} alt="" />
                         <p>{profile.twitter_username === null ? 'Not Available': profile.twitter_username}</p>
                     </div>
-                    <div>
+                    }
+
+                    {!profile.company ? 
+                    <div className='links-wrapper not-available'>
                         <img src={company} alt="" />
-                        <p>{profile.company}</p>
+                        <p>Not Available</p>
+                    </div> :
+                    <div className='links-wrapper'>
+                    <img src={company} alt="" />
+                    <p>{profile.company}</p>
                     </div>
+                    }
                 </div>
             </div>
         </>

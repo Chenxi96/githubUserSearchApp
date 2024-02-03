@@ -11,9 +11,10 @@ $darkMWhite: #FFFFFF;
 $darkMblack: #141D2F;
 $darkMDarkBlue: #1E2A47;
 
+
+
 .profile-container {
     margin-inline: 1.5em;
-    background-color: $lightMWhite;
     padding-block: 2em;
     border-radius: 0.9375em;
     box-shadow: 0em 1em 1.9em -0.6em rgba(70, 96, 187, 0.20);
@@ -63,6 +64,15 @@ $darkMDarkBlue: #1E2A47;
     text-align: center;
 }
 
+.following-title {
+    font-size: 0.6875em;
+}
+
+.following-amount {
+    font-weight: 700;
+    color: $lightMDarkGray;
+}
+
 // links block
 .links-container {
     margin-top: 1.5em;
@@ -73,4 +83,29 @@ $darkMDarkBlue: #1E2A47;
     display: flex;
     gap: 0.8em;
     margin-bottom: 1em;
+}
+
+.links-wrapper > img {
+    height: 1.25em;
+}
+
+.not-available {
+    opacity: 50%;
+}
+
+// dark mode
+.dark-mode-section {
+    background-color: $darkMDarkBlue;
+    color: $darkMWhite;
+    box-shadow: none;
+}
+
+.dark-mode-following {
+    background-color: $darkMblack;
+}
+
+// light mode
+
+.lightMode-section {
+    background-color: $lightMWhite;
 }

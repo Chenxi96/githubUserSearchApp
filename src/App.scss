@@ -1,12 +1,28 @@
-main {
+// light mode colors
+$lightDarkMBlue: #0079FF;
+$lightMGray: #697C9A;
+$lightMGrayBlue: #4B6A9B;
+$lightMDarkGray: #2B3442;
+$ligthMDarkWhite: #F6F8FF;
+$lightMWhite: #FEFEFE;
+
+// dark mode colors
+$darkMWhite: #FFFFFF;
+$darkMblack: #141D2F;
+$darkMDarkBlue: #1E2A47;
+
+
+main #root {
     height: 100vh;
     width: 100vw;
+    background-color: $lightMWhite;
 }
 
 p {
     margin: 0;
     font-family: 'space mono';
 }
+
 
 // Header container
 header {
@@ -25,7 +41,6 @@ header {
 }
 
 .light-mode > p {
-    color: #4B6A9B;
     text-align: right;
     font-family: "Space Mono";
     font-size: 0.8em;
@@ -39,7 +54,7 @@ header {
 // Search Input container
 section {
     margin-inline: 1.5em;
-    background-color: #FEFEFE;
+    background-color: $lightMWhite;
     border-radius: 0.9em;
     margin-block: 2.2em 1em;
     box-shadow: 0em 1em 1.9em -0.6em rgba(70, 96, 187, 0.20);
@@ -67,5 +82,33 @@ input:focus {
     font-size: 0.8em;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.6em; /* 192.308% */
+    line-height: 1.6em;
+}
+
+// dark mode
+.dark-mode-body {
+    background-color: $darkMblack;
+}
+
+.dark-mode {
+    color: $darkMWhite;
+}
+
+.dark-mode-input {
+    background-color: $darkMDarkBlue;
+    box-shadow: none;
+}
+
+.dark-mode-input input {
+    background-color: $darkMDarkBlue;
+}
+
+.dark-mode-input input::placeholder {
+    color: $darkMWhite;
+}
+
+// light mode
+
+.lightMode > p {
+    color: $lightMGrayBlue;
 }
