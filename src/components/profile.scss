@@ -120,7 +120,7 @@ $darkMDarkBlue: #1E2A47;
     background-color: $lightMWhite;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
     .header-container {
         width: 20.875em;
     }
@@ -150,11 +150,15 @@ $darkMDarkBlue: #1E2A47;
         display: flex;
         flex-direction: row;
         height: 3.9em;
-        margin-inline: 2.5em;
+        margin-left: 2.5em;
     }
 
     .links {
         margin-right: 4.0em;
+    }
+
+    .links-wrapper {
+        font-size: 15px;
     }
 
     .following-wrapper {
@@ -173,4 +177,84 @@ $darkMDarkBlue: #1E2A47;
         font-size: 22px;
     }
 
+}
+
+@media screen and (min-width: 1400px) {
+    .header-container {
+        margin-inline: 12.625em auto;
+        position: relative;
+        width: 65%;
+    }
+
+    .profile-container {
+        margin-inline: 6.0625em;
+    }
+
+    .profile-image {
+        position: absolute;
+        width: 117px;
+        height: 117px;
+        left: -12.3125em;
+    }
+
+    .header-wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+    .header-name {
+        font-size: 26px;
+    }
+
+    .header-username {
+        font-size: 1em;
+    }
+
+    .header-joined {
+        position: absolute;
+        width: max-content;
+        font-size: 15px;
+        top: 0;
+        right: 0;
+    }
+
+    .bio-container {
+        font-size: 15px;
+        margin: 0 3em 2em 13.46664em;
+    }
+
+    .links-container {
+        display: flex;
+        flex-direction: row;
+        height: 3.9em;
+        margin: 0 3em 3em 12.625em;
+    }
+
+    .links {
+        margin-right: 4.0em;
+    }
+
+    .links:nth-child(2) {
+        margin-right: 0;
+    }
+
+    .links-wrapper {
+        font-size: 15px;
+    }
+
+    .following-wrapper {
+        display: flex;
+        margin: 0 3em 2.3125em 12.625em;
+        justify-content: flex-start;
+        gap: 84px;
+        padding-inline: 2em;
+    }
+
+    .following-wrapper > div {
+        text-align: left;
+    }
+
+    .following-amount {
+        font-size: 22px;
+    }
 }

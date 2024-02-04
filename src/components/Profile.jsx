@@ -5,6 +5,11 @@ import company from '../assets/icon-company.svg'
 import './profile.scss'
 
 export default function Profile({profile, mode}) {
+    let date = new Date(profile.created_at).getDate()
+    let year = new Date(profile.created_at).getFullYear()
+    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    let month = months[new Date(profile.created_at).getMonth()]
+
     return (
         <>
             <div className={`profile-container ${mode}-section`}>
@@ -13,7 +18,7 @@ export default function Profile({profile, mode}) {
                     <div className='header-wrapper'>
                         <p className='header-name'>{!profile.name ? profile.login : profile.name}</p>
                         <p className='header-username'>{`@${profile.login}`}</p>
-                        <p className='header-joined'>{`Joined ${new Date(profile.created_at).toDateString()}`}</p>
+                        <p className='header-joined'>{`Joined ${date} ${month} ${year}`}</p>
                     </div>
                 </div>
                 <p className='bio-container'>{!profile.bio ? 'This profile has no bio' : profile.bio}</p>
@@ -59,7 +64,6 @@ export default function Profile({profile, mode}) {
                         }
                     </div>
                     <div className='links'>
-
                         {!profile.twitter_username ? 
                         <div className='links-wrapper not-available'>
                             <img src={twitter} alt="" />

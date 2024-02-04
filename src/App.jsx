@@ -7,9 +7,11 @@ import './App.scss'
 
 function App() {
   const[username, setUsername] = useState('octocat')
+  const[result, setResult] = useState('')
   useEffect(() => {
     getUser()
-  }, [username])
+    return () => getUser()
+  }, [username, result])
 
   const[profile, setProfile] = useState({})
   const[mode, setMode] = useState('lightMode')
@@ -17,7 +19,14 @@ function App() {
   function getUser() {
       fetch(`https://api.github.com/users/${username}`)
       .then(response => response.json())
-      .then(data => setProfile(data))
+      .then(data => {
+        if(data.message) {
+          setResult('No results')
+        } else {
+          setProfile(data)
+          setResult('')
+        }
+      })
   }
 
   function lightDarkMode() {
@@ -31,7 +40,7 @@ function App() {
       <header>
         <h1 className={`${mode}`}>devfinder</h1>
         <div onClick={lightDarkMode} className={`light-mode ${mode}`}>
-          <p className={`${mode}`}>{mode === 'dark-mode' ? 'DARK' : 'LIGHT'}</p>
+          <p className={`${mode}`}>{mode === 'dark-mode' ? 'LIGHT' : 'DARK'}</p>
           {mode === 'lightMode' ? <img src={moon} alt="" width={20} height={20} />: <img src={sun} alt="" /> }
         </div>
       </header>
@@ -41,7 +50,10 @@ function App() {
             <img src={search} alt="" width={20.048} height={20} />
             <input onChange={(event) => setUsername(event.target.value) } placeholder='Search GitHub username…' type="text" />
           </div>
-          <button onClick={getUser}>Search</button>
+          <div className='button-container'>
+            {result && <p className='no-result'>{result}</p>}
+            <button onClick={getUser}>Search</button>
+          </div>
         </form>
       </section>
       <article>

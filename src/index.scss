@@ -53,9 +53,28 @@ button:focus-visible {
 }
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   button {
     height: 3.5718em;
     width: 7.5715em;
+  }
+
+  body {
+    margin: 8.75em 6.125em 14.75em 6.0625em;
+  }
+  
+}
+
+@media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 26px;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  main {
+    margin-top: 9em;
   }
 }
