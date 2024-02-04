@@ -58,7 +58,6 @@ function App() {
           {mode === 'lightMode' ? <Moon className={mode} alt="" width={20} height={20} /> : <Sun className={mode} alt="" width={20} height={20} /> }
         </div>
       </header>
-      {console.log(window.innerHeight, window.innerWidth)}
       <section className={`${mode}-input`}>
         <form action="">
           <div className='search-container'>
