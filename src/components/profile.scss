@@ -95,12 +95,17 @@ $darkMDarkBlue: #1E2A47;
     margin-bottom: 1em;
 }
 
+.links-wrapper:hover {
+    text-decoration-line: underline;
+}
+
 .links-wrapper > img {
     height: 1.25em;
 }
 
 .not-available {
     opacity: 50%;
+    pointer-events: none;
 }
 
 // dark mode
