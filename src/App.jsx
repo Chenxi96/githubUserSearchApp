@@ -40,7 +40,6 @@ function App() {
     fetch(`https://api.github.com/users/${username}`)
       .then(response => response.json())
       .then(data => setProfile(data))
-
     setGetProfile(false)
   }
 
@@ -59,6 +58,7 @@ function App() {
           {mode === 'lightMode' ? <Moon className={mode} alt="" width={20} height={20} /> : <Sun className={mode} alt="" width={20} height={20} /> }
         </div>
       </header>
+      {console.log(window.innerHeight, window.innerWidth)}
       <section className={`${mode}-input`}>
         <form action="">
           <div className='search-container'>
@@ -66,8 +66,8 @@ function App() {
             <input onChange={(event) => setUsername(event.target.value) } placeholder='Search GitHub username…' type="text" />
           </div>
           <div className='button-container'>
-            {result && <p className='no-result'>{result}</p>}
-            <button onClick={(e) => {
+            {result && window.innerWidth > 1400 && <p className='no-result'>{result}</p>}
+            <button className={`${mode}-btn`} onClick={(e) => {
               e.preventDefault()
               setGetProfile(true)
             }}>Search</button>
